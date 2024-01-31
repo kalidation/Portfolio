@@ -22,7 +22,7 @@ const About = () => {
         className="mt-4 sm:ml-72 ml-0 text-secondary text-[17px] max-w-3xl leading-[30px] self-start"
       >
         I'm a Frontend Software Engineer Developer With experience in
-        Typescript, i'm mid-Junior expert in frameworks such as React mostly,
+        Typescript, i'm mid-Junior expert in frameworks such as React mostly, 
         React Native, VueJs and Angular, with some knowledge in backend dev with
         Java Spring Boot. I'M a quick learner and passionated in Software
         Developement, i've some hobbies like watch and reading philosophy of

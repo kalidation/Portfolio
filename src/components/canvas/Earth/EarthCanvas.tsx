@@ -1,7 +1,7 @@
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import CanvasLoader from "../../common/Loader";
-import { OrbitControls } from "@react-three/drei";
+
 import Earth from "./Earth";
 
 const EarthCanvas = () => {
@@ -17,7 +17,7 @@ const EarthCanvas = () => {
         position: [-4, 3, 6],
       }}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={null}>
         <OrbitControls
           autoRotate={true}
           enableZoom={false}

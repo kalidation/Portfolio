@@ -1,23 +1,26 @@
-import { NavLink } from "../../utils/constants";
+import { type NavLink } from "../../utils/constants";
 
 interface IProps {
   active: string;
   link: NavLink;
   onClick: () => void;
-  textSize: number;
+  className?: string;
 }
 
 export const NavLinkItem = (props: IProps) => {
-  const { active, link, onClick, textSize } = props;
+  const { active, link, onClick, className = "" } = props;
 
   return (
     <li
-      key={link.id}
       className={`${
         active === link.title ? "text-white" : "text-secondary"
-      } hover:text-white text-[${textSize}px]  font-medium cursor-pointer`}
+      } hover:text-white font-medium cursor-pointer ${className}`}
     >
-      <a onClick={onClick} href={`#${link.id}`}>
+      <a
+        onClick={onClick}
+        href={`#${link.id}`}
+        className="relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-dot-500 after:transition-transform after:duration-300 hover:after:scale-x-100"
+      >
         {link.title}
       </a>
     </li>

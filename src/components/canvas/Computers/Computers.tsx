@@ -1,6 +1,4 @@
 import { useGLTF } from "@react-three/drei";
-import { useRef } from "react";
-import { Mesh } from "three";
 
 interface IProps {
   isMobile: boolean;
@@ -8,11 +6,10 @@ interface IProps {
 
 const Computers = (props: IProps) => {
   const { isMobile } = props;
-  const computer = useGLTF("./desktop_pc/scene.gltf");
-  const meshRef = useRef<Mesh>(null!);
+  const computer = useGLTF(`${import.meta.env.BASE_URL}desktop_pc/scene.gltf`);
 
   return (
-    <mesh ref={meshRef}>
+    <mesh>
       <hemisphereLight intensity={1} groundColor="black" />
       <pointLight intensity={4} />
       <spotLight

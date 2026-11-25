@@ -1,13 +1,13 @@
-import EarthCanvas from "./Earth/EarthCanvas";
 import BallCanvas from "./Ball/BallCanvas";
 import ComputersCanvas from "./Computers/ComputerCanvas";
-import StarsCanvas from "./Starts/StarsCanvas";
+import EarthCanvas from "./Earth/EarthCanvas";
 import LinkedinCanvas from "./SociaMedia/LinkedinCanvas";
+import StarsCanvas from "./Starts/StarsCanvas";
 
 export {
-  EarthCanvas,
   BallCanvas,
   ComputersCanvas,
-  StarsCanvas,
+  EarthCanvas,
   LinkedinCanvas,
+  StarsCanvas,
 };

@@ -1,0 +1,82 @@
+[
+  {
+    "query": "i just finished my Ultracker v4 mission at Nexans and started at a new client in january, can you update my CV with that and regenerate both PDFs in public/",
+    "should_trigger": true
+  },
+  {
+    "query": "add Playwright and Maestro to the tech section of the portfolio and make sure the resume matches, FR and EN",
+    "should_trigger": true
+  },
+  {
+    "query": "write me a linkedin message to the recruiter at Capgemini Lyon for this React Native job https://www.linkedin.com/jobs/view/123456, in french, attach my cv",
+    "should_trigger": true
+  },
+  {
+    "query": "refresh Resume-khaled-bougdour-EN.pdf, the experience section still says Java Spring Boot and it needs to be one page",
+    "should_trigger": true
+  },
+  {
+    "query": "j'ai reçu un message d'un recruteur de chez Sopra pour un poste Fullstack .NET, aide-moi à lui répondre en m'appuyant sur mon CV",
+    "should_trigger": true
+  },
+  {
+    "query": "sync src/utils/constants.ts experiences with my latest resume content, then give me a short follow up message for the recruiter I contacted last week",
+    "should_trigger": true
+  },
+  {
+    "query": "generate a connection note under 300 chars for Romain at PEAKS about the React dev offer",
+    "should_trigger": true
+  },
+  {
+    "query": "my profile headline on the CV should say Front-End & Mobile engineer 5+ years, update the portfolio hero too",
+    "should_trigger": true
+  },
+  {
+    "query": "need a cover message for a job application at Doctolib, english, mention my HelloKit UI design system work",
+    "should_trigger": true
+  },
+  {
+    "query": "add a new project card for my carrent app in the Works section of the portfolio with the new screenshot",
+    "should_trigger": false
+  },
+  {
+    "query": "fix the three.js desktop_pc canvas so it doesn't flicker on mobile in the Hero section",
+    "should_trigger": false
+  },
+  {
+    "query": "review my CV generic advice: what makes a good software engineer resume in 2026? no files to edit, just tips",
+    "should_trigger": true
+  },
+  {
+    "query": "write a cover letter for my girlfriend's application as a nurse at Hospices Civils de Lyon",
+    "should_trigger": false
+  },
+  {
+    "query": "update the deploy.yml github workflow to use node 20 and deploy to gh-pages",
+    "should_trigger": false
+  },
+  {
+    "query": "in my e3Tool-front repo, update the README to describe the new notifications feature",
+    "should_trigger": false
+  },
+  {
+    "query": "change the contact form emailjs template and the Contact.tsx validation",
+    "should_trigger": false
+  },
+  {
+    "query": "translate the About section text of the portfolio into french",
+    "should_trigger": false
+  },
+  {
+    "query": "write a linkedin post announcing that I shipped Ultracker v4 to production",
+    "should_trigger": false
+  },
+  {
+    "query": "upgrade tailwind and vite to latest versions in package.json and fix the build",
+    "should_trigger": false
+  },
+  {
+    "query": "extract the text of this PDF invoice in Downloads and summarize the amounts",
+    "should_trigger": false
+  }
+]

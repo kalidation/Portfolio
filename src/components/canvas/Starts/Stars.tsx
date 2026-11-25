@@ -1,13 +1,20 @@
-import { Points, PointMaterial } from "@react-three/drei";
+import { PointMaterial, Points } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
-import * as random from "maath/random/dist/maath-random.cjs";
+import * as random from "maath/random";
+import { useRef, useState } from "react";
+import type { Points as PointsImpl } from "three";
 
 const Stars = () => {
-  const ref = useRef();
-  const sphere = random.inSphere(new Float32Array(2000), { radius: 1.2 });
+  const ref = useRef<PointsImpl>(null);
+  const [sphere] = useState(
+    () =>
+      random.inSphere(new Float32Array(2001), {
+        radius: 1.2,
+      }) as Float32Array,
+  );
 
-  useFrame((state, delta) => {
+  useFrame((_state, delta) => {
+    if (!ref.current) return;
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
   });

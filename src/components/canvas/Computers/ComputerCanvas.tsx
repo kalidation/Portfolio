@@ -1,27 +1,21 @@
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useState } from "react";
 import { OrbitControls, Preload } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Suspense, useSyncExternalStore } from "react";
+
 import Computers from "./Computers";
-import CanvasLoader from "../../common/Loader";
+
+const MOBILE_QUERY = "(max-width: 500px)";
+
+const subscribe = (onChange: () => void) => {
+  const mediaQuery = window.matchMedia(MOBILE_QUERY);
+  mediaQuery.addEventListener("change", onChange);
+  return () => mediaQuery.removeEventListener("change", onChange);
+};
+
+const getSnapshot = () => window.matchMedia(MOBILE_QUERY).matches;
 
 const ComputerCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-    console.log(event.matches);
-    
-    setIsMobile(event.matches);
-  };
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-    setIsMobile(mediaQuery.matches);
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
+  const isMobile = useSyncExternalStore(subscribe, getSnapshot, () => false);
 
   return (
     <Canvas

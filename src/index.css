@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-  margin: 0;
-  padding: 0; 
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-  color-scheme: dark;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
 }
 
 .hash-span {
@@ -201,5 +201,164 @@
       0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+/* Work experience background: faint code glyphs drifting upward */
+.code-particle {
+  position: absolute;
+  top: 100%;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color: #915eff;
+  opacity: 0;
+  white-space: nowrap;
+  animation: code-float linear infinite;
+}
+
+@keyframes code-float {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+  15%,
+  85% {
+    opacity: 0.22;
+  }
+  100% {
+    top: -5%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-particle {
+    animation: none;
+    display: none;
+  }
+}
+
+.tech-float {
+  animation: tech-float 4.5s ease-in-out infinite;
+}
+
+@keyframes tech-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-float {
+    animation: none;
+  }
+}
+
+.see-more {
+  background-image: linear-gradient(90deg, #86efac, #f9a8d4, #915eff, #86efac);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: #f9a8d4;
+  text-underline-offset: 4px;
+  transition: background-position 0.6s ease;
+}
+
+.see-more:hover {
+  background-position: 100% 0;
+}
+
+.card-border {
+  background-image: linear-gradient(135deg, #86efac, #f9a8d4, #915eff, #86efac);
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+  transition: background-position 1.2s ease;
+}
+
+.card-border:hover {
+  background-position: 100% 50%;
+}
+
+.timeline-connector {
+  position: absolute;
+  top: 50%;
+  width: 1.5rem;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(145, 94, 255, 0.25);
+}
+
+.timeline-connector::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #915eff, transparent);
+  animation: connector-run 2.2s linear infinite;
+}
+
+@keyframes connector-run {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-connector::after {
+    animation: none;
+  }
+}
+
+@property --wave-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.card-wave {
+  background-image:
+    conic-gradient(
+      from var(--wave-angle),
+      transparent 0%,
+      transparent 55%,
+      rgba(134, 239, 172, 0.35) 70%,
+      #86efac 88%,
+      #ffffff 96%,
+      transparent 100%
+    ),
+    linear-gradient(135deg, #86efac, #f9a8d4, #915eff, #86efac);
+  background-size: 100% 100%, 300% 300%;
+  animation:
+    shooting-star 3.2s linear infinite,
+    card-wave 6s ease-in-out infinite;
+  box-shadow: 0 0 22px rgba(134, 239, 172, 0.18);
+}
+
+@keyframes shooting-star {
+  to {
+    --wave-angle: 360deg;
+  }
+}
+
+@keyframes card-wave {
+  0%,
+  100% {
+    background-position: 0 0, 0% 50%;
+  }
+  50% {
+    background-position: 0 0, 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-wave {
+    animation: none;
   }
 }

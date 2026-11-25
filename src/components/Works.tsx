@@ -1,21 +1,17 @@
-import { Fragment } from "react";
 import { motion } from "framer-motion";
-import { styles } from "../styles/style";
-import { fadeIn, textVariant } from "../utils/motionAnimations";
-import SectionHoc from "./common/SectionHoc";
 import { projects } from "../utils/constants";
+import { fadeIn } from "../utils/motionAnimations";
 import { ProjectCard } from "./common/ProjectCard";
+import SectionHoc from "./common/SectionHoc";
+import { SectionHeader } from "./common/SectionHeader";
 
 const Works = () => {
   return (
-    <Fragment>
-      <motion.div className="sm:ml-72 self-start" variants={textVariant(1)}>
-        <p className={styles.sectionSubText}>Where i have worked</p>
-        <h2 className={styles.sectionHeadText}>Projects:</h2>
-      </motion.div>
+    <>
+      <SectionHeader subtitle="Where i have worked" title="Projects:" />
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("", "tween", 0.1, 1)}
           className="sm:ml-72 mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Following projects showcases my skills and experience through
@@ -25,12 +21,12 @@ const Works = () => {
           different technologies and manage project effectively
         </motion.p>
       </div>
-      <div className="mt-10 flex flex-wrap gap-10">
+      <div className="mt-10 flex flex-wrap justify-center gap-10 w-full">
         {projects.map((project, index) => (
           <ProjectCard key={project.name} index={index} {...project} />
         ))}
       </div>
-    </Fragment>
+    </>
   );
 };
 

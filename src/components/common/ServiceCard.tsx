@@ -4,13 +4,14 @@ interface IProps {
   title: string;
   index: number;
   icon: string;
+  wave?: boolean;
 }
 
 export const ServiceCard = (props: IProps) => {
-  const { icon, index, title } = props;
+  const { icon, index, title, wave } = props;
 
   return (
-    <AnimatedCard index={index} width="250px">
+    <AnimatedCard index={index} width="250px" wave={wave}>
       <div
         style={{
           transform: "translateZ(75px)",
